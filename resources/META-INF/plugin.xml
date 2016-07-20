@@ -1,0 +1,31 @@
+<idea-plugin version="2">
+  <id>com.wlangiewicz.intellij.github.notifications</id>
+  <name>GitHub Notifications</name>
+  <version>0.1</version>
+  <vendor email="wlangiewicz@gmail.com" url="http://www.wlangiewicz.com">Wojciech Langiewicz</vendor>
+
+  <description><![CDATA[
+      Plugin to display GitHub notifications right in the IDE
+    ]]></description>
+
+  <change-notes><![CDATA[
+      TODO
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
