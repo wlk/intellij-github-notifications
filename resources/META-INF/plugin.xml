@@ -25,7 +25,11 @@
   </extensions>
 
   <actions>
-    <!-- Add your actions here -->
+    <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
+      <add-to-group group-id="MainMenu" anchor="last"  />
+      <action id="Myplugin.Textboxes" class="com.wlangiewicz.intellijgithubnotifications.TextBoxes" text="Text _Boxes" description="A test menu item" />
+      <action id="Myplugin.Dialogs" class="com.wlangiewicz.intellijgithubnotifications.TextBoxes" text="Show _Dialog" description="A test menu item" />
+    </group>
   </actions>
 
 </idea-plugin>
