@@ -11,7 +11,7 @@ trait JsonFormats {
 
     override def read(value: JsValue): LocalDateTime = value match {
       case JsString(x) => LocalDateTime.parse(x, DateTimeFormatter.ISO_DATE_TIME)
-      case x           => deserializationError("Expected LocalDateTime as String, but got " + x)
+      case x => deserializationError("Expected LocalDateTime as String, but got " + x)
     }
   }
 
