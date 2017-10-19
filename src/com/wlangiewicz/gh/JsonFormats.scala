@@ -2,11 +2,10 @@ package com.wlangiewicz.gh
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import spray.json._
+import spray.json.DefaultJsonProtocol._
 
 trait JsonFormats {
-  import spray.json._
-  import spray.json.DefaultJsonProtocol._
-
   implicit val LocalDateTimeFormat = new JsonFormat[LocalDateTime] {
     override def write(x: LocalDateTime) = JsString(x.toString)
 

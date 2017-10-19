@@ -20,7 +20,9 @@ class GetNotificationsAction extends AnAction("Get_Notifications")  {
 
     val lastSyncDate = state.getLastSyncDate
 
-    notificationManager.displayNotifications(notifications, lastSyncDate, gitHubApi)
+    val filteredNotification = notifications.filter(_.updated_at.isAfter(lastSyncDate))
+
+    notificationManager.displayNotifications(filteredNotification, gitHubApi)
 
     state.setLastSyncDate(LocalDateTime.now)
   }
