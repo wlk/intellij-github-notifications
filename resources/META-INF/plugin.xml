@@ -35,6 +35,11 @@
                     text="Reset Last Sync Date" description="Reset Last Sync Date">
                 <add-to-group group-id="MainMenu" anchor="last"/>
             </action>
+            <action id="GHNotifications.StartBackgroundSyncAction"
+                    class="com.wlangiewicz.gh.actions.StartBackgroundSyncAction"
+                    text="Start Background Sync Thread" description="Start Background Sync Thread">
+                <add-to-group group-id="MainMenu" anchor="last"/>
+            </action>
         </group>
     </actions>
 

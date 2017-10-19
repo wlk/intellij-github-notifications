@@ -11,8 +11,8 @@ class SetGitHubApiKeyAction extends AnAction("Api_Key_Dialog") {
 
     val existingGithubKey = state.getGithubKey
 
-    val message = if(existingGithubKey == null || existingGithubKey.isEmpty) {
-       "You have not provided GitHub API Key, enter it now"
+    val message = if (existingGithubKey == null || existingGithubKey.isEmpty) {
+      "You have not provided GitHub API Key, enter it now"
     } else {
       s"Enter your new GitHub API Key, this will override your current API Key: $existingGithubKey"
     }
