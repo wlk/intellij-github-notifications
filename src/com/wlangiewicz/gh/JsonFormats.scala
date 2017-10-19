@@ -15,7 +15,7 @@ trait JsonFormats {
     }
   }
 
-  implicit val SubjectFormat = jsonFormat3(Subject)
+  implicit val SubjectFormat = jsonFormat4(Subject)
   implicit val NotificationFormat = jsonFormat6(Notification)
   implicit val HtmlUrlFormat = jsonFormat1(HtmlUrl)
 }

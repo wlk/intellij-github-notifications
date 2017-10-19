@@ -6,7 +6,7 @@ class NotificationManager {
   private val NotificationGroup = "GitHubNotificationGroup"
 
   private def makeNotificationBody(notification: Notification, gitHubApi: GitHubApi) = {
-    val url = gitHubApi.getSubjectHtmlUrl(notification.subject)
+    val url = gitHubApi.notficationClickableUrl(notification.subject)
     val html = s"<a href='$url'>${notification.subject.title}</a></html>"
     println(html)
     html
@@ -19,10 +19,17 @@ class NotificationManager {
       }
   }
 
+  private def displayType(subject: Subject): String = {
+    subject.`type` match {
+      case "PullRequest" => "New Pull Request"
+      case s => s
+    }
+  }
+
   private def makeNotification(notification: Notification, gitHubApi: GitHubApi) = {
     new IdeaNotification(
       NotificationGroup,
-      "<html>New Github Notification",
+      s"<html>GitHub Notification for ${displayType(notification.subject)}",
       makeNotificationBody(notification, gitHubApi),
       NotificationType.INFORMATION,
       new NotificationListener.UrlOpeningListener(true)

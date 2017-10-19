@@ -19,7 +19,7 @@ class GitHubApi(gitHubKey: String) extends JsonFormats {
       .convertTo[List[Notification]]
   }
 
-  def getSubjectHtmlUrl(s: Subject): String = {
+  def notficationClickableUrl(s: Subject): String = {
     val url = s.url + s"?access_token=$gitHubKey"
     val stringResponse = makeRequest(url)
     stringResponse
