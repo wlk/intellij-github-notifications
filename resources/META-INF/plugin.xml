@@ -21,12 +21,12 @@
     </extensions>
 
     <actions>
-        <group id="MyPlugin.SampleMenu" text="_GitHub Notifications" description="GitHub Notifications">
+        <group id="GHNotifications.Menu" text="_GitHub Notifications" description="GitHub Notifications">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Dialogs" class="com.wlangiewicz.gh.TextBoxes"
-                    text="Test _Dialog" description="A test menu item">
+            <action id="GHNotifications.GitHubApiKeyDialog" class="com.wlangiewicz.gh.GitHubApiKeyDialog"
+                    text="Enter _API Key" description="Enter GitHub API Key">
             </action>
-            <action id="GetNotifications" class="com.wlangiewicz.gh.GetNotifications"
+            <action id="GHNotifications.GetNotifications" class="com.wlangiewicz.gh.GetNotifications"
                     text="Get Github Notifications" description="Get Github Notifications">
                 <add-to-group group-id="MainMenu" anchor="last"/>
                 <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G"/>
