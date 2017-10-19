@@ -1,5 +1,7 @@
 package com.wlangiewicz.gh
 
+import java.time.LocalDateTime
+
 import com.intellij.notification.{NotificationListener, NotificationType, Notifications, Notification => INotification}
 import com.intellij.openapi.actionSystem.{AnAction, AnActionEvent}
 import org.apache.http.HttpResponse
@@ -18,7 +20,7 @@ class GetNotifications extends AnAction("Get_Notifications") with JsonFormats {
     val gitHubKey = state.getGithubKey
 
     println("Getting Github Notifications2")
-    val allNotifications = getNotifications(s"https://api.github.com/notifications?access_token=$gitHubKey&all=false")
+    val allNotifications = getNotifications(s"https://api.github.com/notifications?access_token=$gitHubKey")
     val notifications = convertToObjects(allNotifications)
     println(notifications)
 
@@ -29,9 +31,15 @@ class GetNotifications extends AnAction("Get_Notifications") with JsonFormats {
       html
     }
 
-    notifications.foreach { n =>
+    val lastSyncDate = state.getLastSyncDate
+
+    notifications
+      .filter(_.updated_at.isAfter(lastSyncDate))
+      .foreach { n =>
       Notifications.Bus.notify(new INotification(NotificationGroup, "<html>New Github Notification", makeNotificationBody(n), NotificationType.INFORMATION, new NotificationListener.UrlOpeningListener(true)))
     }
+
+    state.setLastSyncDate(LocalDateTime.now)
 
   }
 
