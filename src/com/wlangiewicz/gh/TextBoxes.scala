@@ -1,4 +1,4 @@
-package com.wlangiewicz.intellijgithubnotifications
+package com.wlangiewicz.gh
 
 import com.intellij.openapi.actionSystem.{AnAction, AnActionEvent, PlatformDataKeys}
 import com.intellij.openapi.project.Project

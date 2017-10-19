@@ -13,24 +13,20 @@
     ]]>
     </change-notes>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="171.0"/>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
     </extensions>
 
     <actions>
         <group id="MyPlugin.SampleMenu" text="_GitHub Notifications" description="GitHub Notifications">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="Myplugin.Dialogs" class="com.wlangiewicz.intellijgithubnotifications.TextBoxes"
+            <action id="Myplugin.Dialogs" class="com.wlangiewicz.gh.TextBoxes"
                     text="Test _Dialog" description="A test menu item">
             </action>
-            <action id="GetNotifications" class="com.wlangiewicz.intellijgithubnotifications.GetNotifications"
+            <action id="GetNotifications" class="com.wlangiewicz.gh.GetNotifications"
                     text="Get Github Notifications" description="Get Github Notifications">
                 <add-to-group group-id="MainMenu" anchor="last"/>
                 <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G"/>
