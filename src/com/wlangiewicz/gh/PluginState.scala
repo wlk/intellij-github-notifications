@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project
 
 
 class PluginState(project: Project) {
-  private val prefix = "com.wlangiewicz.gh"
+  private val prefix = this.getClass.getPackage.toString
   private val properties = PropertiesComponent.getInstance(project)
   private val gitHubKey = s"${prefix}_gitHubKey"
   private val lastSyncDateKey = s"${prefix}_lastSyncDate"

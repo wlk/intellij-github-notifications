@@ -1,9 +1,10 @@
-package com.wlangiewicz.gh
+package com.wlangiewicz.gh.actions
 
 import com.intellij.openapi.actionSystem.{AnAction, AnActionEvent}
 import com.intellij.openapi.ui.Messages
+import com.wlangiewicz.gh.PluginState
 
-class GitHubApiKeyDialog extends AnAction("Api_Key_Dialog") {
+class SetGitHubApiKeyAction extends AnAction("Api_Key_Dialog") {
   def actionPerformed(event: AnActionEvent) {
     val project = event.getProject
     val state = new PluginState(project)

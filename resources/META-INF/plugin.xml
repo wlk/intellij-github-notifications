@@ -23,15 +23,15 @@
     <actions>
         <group id="GHNotifications.Menu" text="_GitHub Notifications" description="GitHub Notifications">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="GHNotifications.GitHubApiKeyDialog" class="com.wlangiewicz.gh.GitHubApiKeyDialog"
+            <action id="GHNotifications.GitHubApiKeyDialog" class="com.wlangiewicz.gh.actions.SetGitHubApiKeyAction"
                     text="Enter _API Key" description="Enter GitHub API Key">
             </action>
-            <action id="GHNotifications.GetNotifications" class="com.wlangiewicz.gh.GetNotifications"
+            <action id="GHNotifications.GetNotifications" class="com.wlangiewicz.gh.actions.GetNotificationsAction"
                     text="Get Github Notifications" description="Get Github Notifications">
                 <add-to-group group-id="MainMenu" anchor="last"/>
                 <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G"/>
             </action>
-            <action id="GHNotifications.ResetSyncDate" class="com.wlangiewicz.gh.ResetSyncDate"
+            <action id="GHNotifications.ResetSyncDate" class="com.wlangiewicz.gh.actions.ResetSyncDateAction"
                     text="Reset Last Sync Date" description="Reset Last Sync Date">
                 <add-to-group group-id="MainMenu" anchor="last"/>
             </action>
