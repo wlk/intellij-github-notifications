@@ -17,7 +17,14 @@ class PluginState(project: Project) {
   }
 
   def getLastSyncDate: LocalDateTime = {
-    LocalDateTime.parse(properties.getValue(lastSyncDateKey))
+    val value = properties.getValue(lastSyncDateKey)
+
+    if (value == null) {
+      // If there's no data, fetch last 30 days
+      LocalDateTime.now().minusDays(30)
+    } else {
+      LocalDateTime.parse(value)
+    }
   }
 
   def setGithubKey(value: String) = {
@@ -26,6 +33,10 @@ class PluginState(project: Project) {
 
   def setLastSyncDate(value: LocalDateTime) = {
     properties.setValue(lastSyncDateKey, value.toString)
+  }
+
+  def resetLastSyncDate() = {
+    properties.unsetValue(lastSyncDateKey)
   }
 
 }

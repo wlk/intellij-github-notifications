@@ -9,7 +9,7 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      TODO
+      Initial release
     ]]>
     </change-notes>
 
@@ -30,6 +30,10 @@
                     text="Get Github Notifications" description="Get Github Notifications">
                 <add-to-group group-id="MainMenu" anchor="last"/>
                 <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G"/>
+            </action>
+            <action id="GHNotifications.ResetSyncDate" class="com.wlangiewicz.gh.ResetSyncDate"
+                    text="Reset Last Sync Date" description="Reset Last Sync Date">
+                <add-to-group group-id="MainMenu" anchor="last"/>
             </action>
         </group>
     </actions>
