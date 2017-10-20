@@ -2,8 +2,9 @@ package com.wlangiewicz.gh
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import spray.json._
+
 import spray.json.DefaultJsonProtocol._
+import spray.json._
 
 trait JsonFormats {
   implicit val LocalDateTimeFormat = new JsonFormat[LocalDateTime] {

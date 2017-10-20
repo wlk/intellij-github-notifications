@@ -16,6 +16,10 @@ class PluginState(project: Project) {
     properties.getValue(gitHubKey)
   }
 
+  def setGithubKey(value: String): Unit = {
+    properties.setValue(gitHubKey, value)
+  }
+
   def getLastSyncDate: LocalDateTime = {
     val value = properties.getValue(lastSyncDateKey)
 
@@ -27,15 +31,11 @@ class PluginState(project: Project) {
     }
   }
 
-  def setGithubKey(value: String) = {
-    properties.setValue(gitHubKey, value)
-  }
-
-  def setLastSyncDate(value: LocalDateTime) = {
+  def setLastSyncDate(value: LocalDateTime): Unit = {
     properties.setValue(lastSyncDateKey, value.toString)
   }
 
-  def resetLastSyncDate() = {
+  def resetLastSyncDate(): Unit = {
     properties.unsetValue(lastSyncDateKey)
   }
 

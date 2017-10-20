@@ -19,7 +19,7 @@ class SetGitHubApiKeyAction extends AnAction("Api_Key_Dialog") {
 
     val enteredGitHubKey: String = Messages.showInputDialog(project, message, "Github API Key", Messages.getQuestionIcon)
 
-    if(enteredGitHubKey != null) {
+    if (enteredGitHubKey != null) {
       state.setGithubKey(enteredGitHubKey)
       Messages.showMessageDialog(project, s"GitHub API Key saved ${state.getGithubKey}", "Information", Messages.getInformationIcon)
     }

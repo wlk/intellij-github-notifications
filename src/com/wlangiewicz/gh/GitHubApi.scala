@@ -19,6 +19,12 @@ class GitHubApi(gitHubKey: String) extends JsonFormats {
       .convertTo[List[Notification]]
   }
 
+  private def makeRequest(url: String): String = {
+    val request = new HttpGet(url)
+    val response: HttpResponse = client.execute(request)
+    EntityUtils.toString(response.getEntity)
+  }
+
   def notficationClickableUrl(s: Subject): String = {
     val url = s.url + s"?access_token=$gitHubKey"
     val stringResponse = makeRequest(url)
@@ -26,11 +32,5 @@ class GitHubApi(gitHubKey: String) extends JsonFormats {
       .parseJson
       .convertTo[HtmlUrl]
       .html_url
-  }
-
-  private def makeRequest(url: String): String = {
-    val request = new HttpGet(url)
-    val response: HttpResponse = client.execute(request)
-    EntityUtils.toString(response.getEntity)
   }
 }
