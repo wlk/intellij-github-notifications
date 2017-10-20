@@ -5,7 +5,6 @@ import java.time.LocalDateTime
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.project.Project
 
-
 class PluginState(project: Project) {
   private val prefix = this.getClass.getPackage.toString
   private val properties = PropertiesComponent.getInstance(project)

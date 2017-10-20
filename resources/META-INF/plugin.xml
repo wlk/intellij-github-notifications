@@ -1,11 +1,12 @@
 <idea-plugin>
-    <id>com.wlangiewicz.intellijgithubnotifications</id>
+    <id>com.wlangiewicz.gh</id>
     <name>GitHub Notifications</name>
     <version>0.1</version>
     <vendor url="https://www.wlangiewicz.com">Wojciech Langiewicz</vendor>
 
     <description><![CDATA[
       Plugin to display GitHub notifications right in the IDE
+      Simply enter your GitHub access token and notifications about activities will pop-up.
     ]]></description>
 
     <change-notes><![CDATA[

@@ -7,7 +7,7 @@ import spray.json.DefaultJsonProtocol._
 import spray.json._
 
 trait JsonFormats {
-  implicit val LocalDateTimeFormat = new JsonFormat[LocalDateTime] {
+  implicit val LocalDateTimeFormat: JsonFormat[LocalDateTime] = new JsonFormat[LocalDateTime] {
     override def write(x: LocalDateTime) = JsString(x.toString)
 
     override def read(value: JsValue): LocalDateTime = value match {
@@ -16,7 +16,7 @@ trait JsonFormats {
     }
   }
 
-  implicit val SubjectFormat = jsonFormat4(Subject)
-  implicit val NotificationFormat = jsonFormat6(Notification)
-  implicit val HtmlUrlFormat = jsonFormat1(HtmlUrl)
+  implicit val SubjectFormat: RootJsonFormat[Subject] = jsonFormat4(Subject)
+  implicit val NotificationFormat: RootJsonFormat[Notification] = jsonFormat6(Notification)
+  implicit val HtmlUrlFormat: RootJsonFormat[HtmlUrl] = jsonFormat1(HtmlUrl)
 }
