@@ -1,6 +1,6 @@
 package com.wlangiewicz.gh
 
-import java.time.LocalDateTime
+import java.time.{Clock, LocalDateTime}
 
 import com.intellij.openapi.project.Project
 
@@ -19,6 +19,6 @@ class GitHubNotificationFetch(project: Project, notificationManager: Notificatio
 
     notificationManager.displayNotifications(filteredNotification, gitHubApi)
 
-    state.setLastSyncDate(LocalDateTime.now)
+    state.setLastSyncDate(LocalDateTime.now(Clock.systemUTC()))
   }
 }
