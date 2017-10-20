@@ -11,7 +11,7 @@ class GitHubNotificationFetch(project: Project, notificationManager: Notificatio
   def fetchAndDisplay(): Unit = {
     println("Getting Github Notifications2")
     val notifications = gitHubApi.getNotifications
-    println(notifications)
+    println(notifications.mkString("\n"))
 
     val lastSyncDate = state.getLastSyncDate
 
