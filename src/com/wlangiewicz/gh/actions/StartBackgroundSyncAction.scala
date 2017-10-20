@@ -11,7 +11,7 @@ class StartBackgroundSyncAction extends AnAction("Get_Notifications") {
 
   def actionPerformed(event: AnActionEvent) {
     // Has to start new thread to avoid blocking UI
-    // Still blocks the UI
+    // TODO: Still blocks the UI
     new Thread {
       override def run(): Unit = {
         val project = event.getProject

@@ -4,7 +4,7 @@ import com.intellij.openapi.actionSystem.{AnAction, AnActionEvent}
 import com.wlangiewicz.gh._
 
 class GetNotificationsAction extends AnAction("Get_Notifications") {
-  println("Plugin Loaded6")
+  println("Plugin Loaded7")
   val notificationManager = new NotificationManager
 
   def actionPerformed(event: AnActionEvent) {
