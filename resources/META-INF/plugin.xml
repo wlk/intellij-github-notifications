@@ -7,10 +7,12 @@
     <description><![CDATA[
       Plugin to display GitHub notifications right in the IDE
       Simply enter your GitHub access token and notifications about activities will pop-up.
+      Open source and hosted on <a href="https://github.com/wlk/intellij-github-notifications">GitHub - wlk/intellij-github-notifications</a>
     ]]></description>
 
     <change-notes><![CDATA[
-      Initial release
+      0.1
+        * Initial release
     ]]>
     </change-notes>
 
