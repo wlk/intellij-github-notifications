@@ -9,6 +9,7 @@ class GetNotificationsAction extends AnAction("Get_Notifications") {
 
   def actionPerformed(event: AnActionEvent) {
     val project = event.getProject
+    // TODO: This shouldn't block the UI thread but it does
     new GitHubNotificationFetch(project, notificationManager).fetchAndDisplay()
     println("finished displaying notifications")
   }

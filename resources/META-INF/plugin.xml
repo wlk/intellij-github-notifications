@@ -5,14 +5,14 @@
     <vendor url="https://www.wlangiewicz.com">Wojciech Langiewicz</vendor>
 
     <description><![CDATA[
-      Plugin to display GitHub notifications right in the IDE
-      Simply enter your GitHub access token and notifications about activities will pop-up.
+      Plugin to display GitHub notifications right in the IDE<br/>
+      Simply enter your GitHub access token and notifications about activities will pop-up.<br/>
       Open source and hosted on <a href="https://github.com/wlk/intellij-github-notifications">GitHub - wlk/intellij-github-notifications</a>
     ]]></description>
 
     <change-notes><![CDATA[
-      0.1
-        * Initial release
+      0.1 <br/>
+        - Initial release
     ]]>
     </change-notes>
 
