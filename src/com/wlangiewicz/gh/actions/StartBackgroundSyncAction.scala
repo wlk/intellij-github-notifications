@@ -9,6 +9,8 @@ import scala.annotation.tailrec
 class StartBackgroundSyncAction extends AnAction("Get_Notifications") {
   val notificationManager = new NotificationManager
 
+
+
   def actionPerformed(event: AnActionEvent) {
     // Has to start new thread to avoid blocking UI
     // TODO: Still blocks the UI
